@@ -8,3 +8,4 @@ Press J To Make Map Invisible
 Press K To Make Map Visible
 Press X To Become Invisible
 Press C To Become Visible
+Press V To Noclip
