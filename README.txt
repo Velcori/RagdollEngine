@@ -10,3 +10,4 @@ Press X To Become Invisible
 Press C To Become Visible
 Press V To Noclip
 Press L To Make Everything Visible
+Press R To Drink Potion
