@@ -12,3 +12,5 @@ Press B To Noclip
 Press L To Make Everything Visible
 Press R To Drink Potion
 Press V To Fly
+Press Ctrl + Click To Teleport
+Press LeftAlt To Bomb Hold LeftAlt To Spam Bomb
