@@ -1,5 +1,4 @@
-print("
-NO TOOLS ARE REQUIRED
+print("NO TOOLS ARE REQUIRED
 Press E To Mega Push
 Press Spam E To Fling
 Press Q To Stop Pushing
@@ -14,5 +13,4 @@ Press V To Noclip
 Press L To Make Everything Visible
 Press R To Drink Potion
 Press Ctrl + Click To Teleport
-Press LeftAlt To Bomb Hold LeftAlt To Spam Bomb
-")
+Press LeftAlt To Bomb Hold LeftAlt To Spam Bomb")
