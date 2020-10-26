@@ -1,3 +1,4 @@
+print("
 NO TOOLS ARE REQUIRED
 Press E To Mega Push
 Press Spam E To Fling
@@ -9,9 +10,9 @@ Press J To Make Map Invisible
 Press K To Make Map Visible
 Press X To Become Invisible
 Press C To Become Visible
-Press B To Noclip
+Press V To Noclip
 Press L To Make Everything Visible
 Press R To Drink Potion
-Press V To Fly
 Press Ctrl + Click To Teleport
 Press LeftAlt To Bomb Hold LeftAlt To Spam Bomb
+")
