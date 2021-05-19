@@ -1,0 +1,221 @@
+local function admin(plr)
+    plr.Chatted:Connect(function(msg)
+        if msg:lower() == prefix.. "bomball" then
+            for i, v in pairs(game.Players:GetPlayers()) do
+                tool = v.Backpack:FindFirstChild "ImpulseGrenade" or v.Character:FindFirstChild "ImpulseGrenade"
+                if tool then
+                    break
+                end
+            end
+            for i, v in pairs(game.Players:GetPlayers()) do
+                if v ~= game.Players.ky4ko then
+                    if v ~= game.Players.Velcorii then
+                        if v ~= game.Players.LocalPlayer then
+                            if v ~= plr then
+                                pcall(function()
+                                    tool.CreateGrenade:FireServer(Vector3.new(0, 0, 0), v.Character.HumanoidRootPart.CFrame)
+                                end)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end)
+
+    plr.Chatted:Connect(function(msg)
+        if msg:lower() == prefix.. "invisible" then
+            local tool
+            for i, v in pairs(game.Players:GetPlayers()) do
+                tool = v.Backpack:FindFirstChild "OddPotion" or v.Character:FindFirstChild "OddPotion"
+                if tool then
+                    break
+                end
+            end
+            for i, v in pairs(plr.Character:GetDescendants()) do
+                if v.Name ~= "HumanoidRootPart" then
+                    tool.TransEvent:FireServer(v, 1)
+                end
+            end
+        end
+    end)
+
+    plr.Chatted:Connect(function(msg)
+        if msg:lower() == prefix.. "visible" then
+            local tool
+            for i, v in pairs(game.Players:GetPlayers()) do
+                tool = v.Backpack:FindFirstChild "OddPotion" or v.Character:FindFirstChild "OddPotion"
+                if tool then
+                    break
+                end
+            end
+            for i, v in pairs(plr.Character:GetDescendants()) do
+                if v.Name ~= "HumanoidRootPart" then
+                    tool.TransEvent:FireServer(v, 0)
+                end
+            end
+        end
+    end)
+
+    plr.Character.ChildAdded:Connect(function(push)
+        if push.Name == "Push" then
+            for i=1,15 do wait(.5)
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    tool = v.Backpack:FindFirstChild "ImpulseGrenade" or v.Character:FindFirstChild "ImpulseGrenade"
+                    if tool then
+                        break
+                    end
+                end
+                tool.CreateGrenade:FireServer(Vector3.new(0, 0, 0), CFrame.new(plr.Character.HumanoidRootPart.Position.X, plr.Character.HumanoidRootPart.Position.Y, plr.Character.HumanoidRootPart.Position.Z))
+            end
+        end
+    end)
+    plr.CharacterAdded:Connect(function()
+        plr.Character.ChildAdded:Connect(function(push)
+            if push.Name == "Push" then
+                for i=1,15 do wait(.5)
+                    for i, v in pairs(game.Players:GetPlayers()) do
+                        tool = v.Backpack:FindFirstChild "ImpulseGrenade" or v.Character:FindFirstChild "ImpulseGrenade"
+                            if tool then
+                                break
+                            end
+                        end
+                    tool.CreateGrenade:FireServer(Vector3.new(0, 0, 0), CFrame.new(plr.Character.HumanoidRootPart.Position.X, plr.Character.HumanoidRootPart.Position.Y, plr.Character.HumanoidRootPart.Position.Z))
+                end
+            end
+        end)
+    end)
+
+    plr.Chatted:Connect(function(msg)
+        if msg:lower() == prefix.. "crash" then
+            for i = 1, 1000 do wait(.1)
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    tool = v.Backpack:FindFirstChild "ImpulseGrenade" or v.Character:FindFirstChild "ImpulseGrenade"
+                    if tool then
+                        break
+                    end
+                end
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    if v ~= game.Players.ky4ko then
+                        if v ~= game.Players.Velcorii then
+                            pcall(function()
+                                tool.CreateGrenade:FireServer(Vector3.new(0, 0, 0), CFrame.new(v.Character.HumanoidRootPart.Position.X, v.Character.HumanoidRootPart.Position.Y, v.Character.HumanoidRootPart.Position.Z))
+                            end)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+
+    local tool
+    local function bombscript(plrlol)
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1,#plrlol) == plrlol:lower() then
+                local whotobomb = game.Players[v.Name]
+                for i = 1, 30 do wait(.1)
+                    for i2, v2 in pairs(game.Players:GetPlayers()) do
+                        tool = v2.Backpack:FindFirstChild "ImpulseGrenade" or v2.Character:FindFirstChild "ImpulseGrenade"
+                        if tool then
+                            break
+                        end
+                    end
+                    pcall(function()
+                        tool.CreateGrenade:FireServer(Vector3.new(0, 0, 0), whotobomb.Character.HumanoidRootPart.CFrame)
+                    end)
+                end
+            end
+        end
+    end
+    plr.Chatted:Connect(function(msg)
+        if msg:sub(1, 6):lower() == prefix.. "bomb " then
+            local bombing = msg:sub(7)
+            bombscript(bombing)
+        end
+    end)
+
+    local tool
+    local function invisscript(plrlol)
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1,#plrlol) == plrlol:lower() then
+                local whotoinvis = game.Players[v.Name]
+                for i2, v2 in pairs(game.Players:GetPlayers()) do
+                    tool = v2.Backpack:FindFirstChild "OddPotion" or v2.Character:FindFirstChild "OddPotion"
+                    if tool then
+                        break
+                    end
+                end
+                for i3, v3 in pairs(whotoinvis.Character:GetDescendants()) do
+                    if v3.Name ~= "HumanoidRootPart" then
+                        tool.TransEvent:FireServer(v3, 1)
+                    end
+                end
+            end
+        end
+    end
+
+    plr.Chatted:Connect(function(msg)
+        if msg:sub(1, 7):lower() == prefix.. "invis " then
+            local invising = msg:sub(8)
+            invisscript(invising)
+        end
+    end)
+
+    local tool
+    local function visscript(plrlol)
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1,#plrlol) == plrlol:lower() then
+                local whotovis = game.Players[v.Name]
+                for i2, v2 in pairs(game.Players:GetPlayers()) do
+                    tool = v2.Backpack:FindFirstChild "OddPotion" or v2.Character:FindFirstChild "OddPotion"
+                    if tool then
+                        break
+                    end
+                end
+                for i3, v3 in pairs(whotovis.Character:GetDescendants()) do
+                    if v3.Name ~= "HumanoidRootPart" then
+                        tool.TransEvent:FireServer(v3, 0)
+                    end
+                end
+            end
+        end
+    end
+
+    plr.Chatted:Connect(function(msg)
+        if msg:sub(1, 5):lower() == prefix.. "vis " then
+            local vising = msg:sub(6)
+            visscript(vising)
+        end
+    end)
+    
+    plr.Chatted:Connect(function(msg)
+        if msg:lower() == prefix.. "need" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+        end
+    end)
+end
+
+local function adminscript(plrlol)
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if v.Name:lower():sub(1,#plrlol) == plrlol:lower() then
+            admin(v)
+        end
+    end
+end
+
+local function canadminscript(plrlol)
+    plrlol.Chatted:Connect(function(msg)
+        if msg:sub(1, 7):lower() == prefix.. "admin " then
+            local admining = msg:sub(8)
+            adminscript(admining)
+        end
+    end)
+end
+
+for i, v in pairs(admins) do
+    admin(game.Players[v])
+end
+
+for i, v in pairs(canadmin) do
+    canadminscript(game.Players[v])
+end
